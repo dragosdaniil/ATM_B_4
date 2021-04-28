@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <script
+      src="https://kit.fontawesome.com/86bccfe578.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="slider.css">
+    
+  </head>
+  <body>
+    <button class="go-up">
+      <i class="fas fa-caret-square-up"></i>
+    </button>
+    <div class="container">
+      <div class="background-img">
+        <nav class="menu-bar">
+          <div class="web-header">
+            <h2>Navbar</h2>
+            <button class="nav-toggle">
+              <i class="fas fa-th-large"></i>
+            </button>
+          </div>
+
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#sim-map">Our Map</a></li>
+            <li><a href="#tours">Future Content</a></li>
+          </ul>
+        </nav>
+        <div class="start-container">
+          <button class="start">
+            Start Simulation
+          </button>
+        </div>
+      </div>
+      <div class="about" id="about">
+        <h1>about <span>us</span></h1>
+          <section class="center">
+          <div class="slide-container">
+            <img alt="image" id="img" />
+          </div>
+          <div class="button-container">
+            <button class="prev-btn" id="prev">
+              <i class="fas fa-caret-square-left"></i>
+            </button>
+            <button class="next-btn" id="next">
+              <i class="fas fa-caret-square-right"></i>
+            </button>
+          </div>
+        </section>
+      </div>
+      <div class="services" id="sim-map">
+        <h1>our <span>map</span></h1>
+        <div class="map-container">
+        <div id="flights">
+          
+        
+          <table>
+            <tr>
+              <th>NW</th>
+              <th>SE</th>
+            </tr>
+            <tr>
+              <td id="UP">0</td>
+              <td id="DOWN">0</td>
+            </tr>
+          </table>
+        </div>
+      
+        <div id="currentCap">
+        
+      
+        <div class="alert-section">
+          <table>
+          <tr id="header">
+            <th>MOPUG</th>
+            <th>BUDOP</th>
+          </tr>
+          <tr id="sectors">
+            <td id="MOPUG">0</td>
+            <td id="BUDOP">0</td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <div id="map"></div>
+      <div id="buttons" class="sim-btn">
+        <button type="button" class="sim-start">Start simulation</button>
+        <button type="button" class="sim-stop" disabled>End simulation</button>
+      </div>
+    </div>
+    
+      </div>
+      <div class="tours" id="tours">
+        <h1>future <span>content</span></h1>
+      </div>
+      <footer>
+        <p>Copyright &#169 <span class="date">2021</span></p>
+      </footer>
+    </div>
+    <script src="../scripts/index.js" type="module"></script>
+    <script src="../scripts/func.js"></script>
+    <script src="../scripts/slider.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC-_-O8P7mjb-UWjaAZm6WiwX5_1y11HE&libraries=geometry,drawing&v=weekly"></script>
+  </body>
+</html>

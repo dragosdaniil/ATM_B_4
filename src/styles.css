@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --span-color: rgb(51, 188, 230);
+  --nav-color: rgb(189, 72, 72);
+  --services: rgba(221, 238, 243, 0.795);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+span {
+  color: var(--span-color);
+  font-weight: 800;
+}
+
+ul {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: auto auto auto auto;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: var(--span-color);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+li {
+  text-align: center;
+  padding: 3px;
+}
+li:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+table {
+  margin: 0;
+  text-align: center;
+  width: fit-content;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--span-color);
+}
+
+th,
+td {
+  text-align: center;
+  color: var(--span-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--span-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+}
+
+.background-img {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  background: url("../images/airplane.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  place-items: center;
+}
+
+.start {
+  background-color: transparent;
+  border-color: var(--span-color);
+  color: var(--span-color);
+  font-family: "Roboto", sans-serif;
+  height: 2.5rem;
+  font-size: 2rem;
+  outline: none;
+}
+nav {
+  display: grid;
+  grid-template-columns: 60% auto;
+  min-height: 50px;
+  height: auto;
+  align-items: center;
+  overflow: hidden;
+  color: var(--span-color);
+  width: 100%;
+  place-content: center;
+  z-index: 3;
+}
+
+.web-header {
+  display: flex;
+}
+
+h2 {
+  place-self: center;
+}
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.go-up {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  border: none;
+  color: var(--span-color);
+  outline: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: none;
+}
+
+.go-up:hover {
+  background-color: rgba(241, 227, 227, 0.5);
+  color: rgb(119, 32, 32);
+}
+
+.about,
+.services,
+.tours {
+  height: 100vh;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+.services {
+  background-color: var(--services);
+  display: grid;
+  grid-template-rows: auto auto;
+  width: fit-content;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  background-color: darkblue;
+  width: 100%;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.move-bar {
+  position: fixed;
+  background-color: rgb(241, 249, 250);
+  box-shadow: 5px -5px 8px rgba(0, 0, 0, 0.4);
+}
+/* ========
+  MAP CONTENT 
+   ========*/
+
+.map-container {
+  display: grid;
+  grid-template-areas: "a b c" "d b c";
+  grid-template-columns: 15vw 70vw 15vw;
+  place-items: center;
+}
+
+#map {
+  text-align: center;
+  height: 85vh;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  grid-area: b;
+}
+
+#buttons {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  row-gap: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  place-content: center;
+  grid-area: d;
+  width: 100%;
+}
+
+.sim-start,
+.sim-stop {
+  background-color: transparent;
+  border: none;
+  height: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: var(--span-color);
+  font-weight: 800;
+  outline: none;
+}
+
+.sim-start:hover,
+.sim-stop:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+#flights {
+  grid-area: a;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#currentCap {
+  grid-area: c;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========
+END OF MAP CONTENT
+   ======== */
+
+@media screen and (max-width: 768px) {
+  .background-img {
+    display: block;
+  }
+  .start-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-toggle {
+    display: block;
+    background-color: transparent;
+    color: var(--span-color);
+    font-size: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    outline: none;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .web-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-toggle {
+    place-self: center;
+  }
+
+  .links {
+    display: block;
+    height: 0;
+    animation: move-up 0.5s linear;
+  }
+  li {
+    text-align: left;
+    width: fit-content;
+  }
+  .show {
+    height: fit-content;
+    text-align: left;
+    animation: move-down 0.5s linear;
+  }
+
+  .map-container {
+    display: grid;
+    grid-template-areas: "a a a" "d b c";
+    grid-template-columns: 22vw 56vw 22vw;
+    place-items: center;
+  }
+
+  #map {
+    text-align: center;
+    height: 60vh;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    grid-area: a;
+  }
+
+  #buttons {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    row-gap: 10px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    place-content: center;
+    grid-area: b;
+  }
+
+  .sim-start,
+  .sim-stop {
+    background-color: transparent;
+    border: none;
+    height: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    color: var(--span-color);
+    font-weight: 800;
+    outline: none;
+  }
+
+  .sim-start:hover,
+  .sim-stop:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  }
+
+  #flights {
+    grid-area: d;
+  }
+
+  #currentCap {
+    grid-area: c;
+  }
+  .go-up {
+    bottom: 10%;
+    right: 10%;
+  }
+}
+
+@keyframes move-down {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 0;
+  }
+}
