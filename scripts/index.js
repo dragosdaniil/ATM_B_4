@@ -226,6 +226,8 @@ function stopCallback(e) {
     item.marker.setMap(null);
     clearTimeout(item.timeout);
   });
+  Flight.counterUp = [];
+  Flight.counterDown = [];
 
   elemMopug.textContent = 0;
   elemBudop.textContent = 0;
@@ -249,7 +251,6 @@ function stopCallback(e) {
   }
   const alerts = document.querySelector(".alert-section");
   const children = alerts.querySelectorAll(".alert");
-  // console.log(children);
   children.forEach((child) => {
     alerts.removeChild(child);
   });
