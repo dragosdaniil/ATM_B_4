@@ -9,6 +9,12 @@ let countTimeout;
 let counterMopug = 0;
 let counterBudop = 0;
 let map;
+
+let elemMopug = document.getElementById("MOPUG");
+let elemBudop = document.getElementById("BUDOP");
+let elemNW = document.getElementById("UP");
+let elemSE = document.getElementById("DOWN");
+
 const myLatLng = new google.maps.LatLng(46.493055, 23.168889);
 const iconUp = {
   url:
@@ -72,7 +78,6 @@ let Budop2 = new Sector(
 );
 
 function simulateUp() {
-  let elemNW = document.getElementById("UP");
   let time = newPoint(4000, 10000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
@@ -96,7 +101,6 @@ function simulateUp() {
 }
 
 function simulateDown() {
-  let elemSE = document.getElementById("DOWN");
   let time = newPoint(4000, 10000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
@@ -157,8 +161,6 @@ function checkBudop(no) {
 function split() {
   let n_Mopug = 0;
   let n_Budop = 0;
-  let elemMopug = document.getElementById("MOPUG");
-  let elemBudop = document.getElementById("BUDOP");
   function count() {
     for (let i = 0; i < Flight.counterUp.length; i++) {
       let flight = Flight.counterUp[i];
@@ -210,10 +212,6 @@ function callback(e) {
 }
 
 function stopCallback(e) {
-  let elemMopug = document.getElementById("MOPUG");
-  let elemBudop = document.getElementById("BUDOP");
-  let elemNW = document.getElementById("UP");
-  let elemSE = document.getElementById("DOWN");
   clearTimeout(simTimeoutUp);
   clearTimeout(simTimeoutDown);
   clearTimeout(countTimeout);
