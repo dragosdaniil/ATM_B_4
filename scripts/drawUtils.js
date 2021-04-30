@@ -132,12 +132,12 @@ export class Flight {
       Flight.counterUp = Flight.counterUp.filter(
         (flight) => flight.id !== this.id
       );
-      console.log(Flight.counterUp.length);
+      // console.log(Flight.counterUp.length);
     } else {
       Flight.counterDown = Flight.counterDown.filter(
         (flight) => flight.id !== this.id
       );
-      console.log(Flight.counterDown.length);
+      // console.log(Flight.counterDown.length);
     }
   }
   updatePos() {
@@ -152,7 +152,7 @@ export class Flight {
       this.marker.position.lng() < 21.2 ||
       this.marker.position.lng() > 23.6
     ) {
-      console.log(`The flight ${this.id} has been eliminated`);
+      // console.log(`The flight ${this.id} has been eliminated`);
       clearTimeout(this.timeout);
       this.deleteFlight();
       return true;

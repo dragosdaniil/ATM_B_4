@@ -203,7 +203,7 @@ function callback(e) {
   simulateDown();
   split();
   e.currentTarget.setAttribute("disabled", "");
-  const stop = e.currentTarget.parentElement.querySelector(".sim-stop");
+  const stop = document.querySelector(".sim-stop");
   if (stop.hasAttribute("disabled")) {
     stop.removeAttribute("disabled");
   }
@@ -258,8 +258,8 @@ function stopCallback(e) {
 
 document.querySelector(".sim-start").addEventListener("click", callback);
 document.querySelector(".sim-stop").addEventListener("click", stopCallback);
-document.querySelector(".start").addEventListener("click", () => {
+document.querySelector(".start").addEventListener("click", (e) => {
   window.location.href = "#sim-map";
-  callback();
+  callback(e);
   document.querySelector(".sim-start").setAttribute("disabled", "");
 });
