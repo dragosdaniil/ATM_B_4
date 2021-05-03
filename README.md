@@ -1,4 +1,4 @@
-# PROJECT 6, TEAM B
+# PROJECT 6
 
 ### Resources
 [For HTML](https://www.w3schools.com/html/)
