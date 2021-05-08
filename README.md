@@ -1,6 +1,6 @@
 # PROJECT 6
 
-[Check the simulator](https://cranky-mestorf-28e56f.netlify.app)
+[Check the simulator](https://sectorization-simulator.netlify.app)
 
 ### Resources
 [For HTML](https://www.w3schools.com/html/)
