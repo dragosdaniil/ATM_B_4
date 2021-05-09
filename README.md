@@ -1,4 +1,6 @@
-# PROJECT 6, TEAM B
+# PROJECT 6
+
+[Check the simulator](https://sectorization-simulator.netlify.app)
 
 ### Resources
 [For HTML](https://www.w3schools.com/html/)
