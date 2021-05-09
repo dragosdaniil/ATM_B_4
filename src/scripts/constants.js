@@ -106,3 +106,13 @@ export const UP = [LONG_UP, LAT_UP];
 
 export const directionsUp = linspace(290, 350, 10);
 export const directionsDown = linspace(120, 170, 10);
+
+export const iconUp = {
+  url:
+    "http://earth.google.com/images/kml-icons/track-directional/track-14.png",
+  scaledSize: new google.maps.Size(30, 30),
+};
+export const iconDown = {
+  url: "http://earth.google.com/images/kml-icons/track-directional/track-6.png",
+  scaledSize: new google.maps.Size(30, 30),
+};

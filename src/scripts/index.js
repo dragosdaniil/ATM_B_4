@@ -16,15 +16,6 @@ let elemNW = document.getElementById("UP");
 let elemSE = document.getElementById("DOWN");
 
 const myLatLng = new google.maps.LatLng(46.493055, 23.168889);
-const iconUp = {
-  url:
-    "http://earth.google.com/images/kml-icons/track-directional/track-14.png",
-  scaledSize: new google.maps.Size(30, 30),
-};
-const iconDown = {
-  url: "http://earth.google.com/images/kml-icons/track-directional/track-6.png",
-  scaledSize: new google.maps.Size(30, 30),
-};
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -92,7 +83,7 @@ function simulateUp() {
       constants.directionsUp[dir],
       map,
       0.1,
-      iconUp
+      constants.iconUp
     );
     flight.updatePos();
   }
@@ -115,7 +106,7 @@ function simulateDown() {
       constants.directionsDown[dir],
       map,
       0.1,
-      iconDown
+      constants.iconDown
     );
     flight.updatePos();
   }
@@ -140,6 +131,7 @@ function checkMopug(no) {
     counterMopug = 0;
   }
 }
+
 function checkBudop(no) {
   if (no > Budop.capacity) {
     Budop1.setMap(map);
@@ -188,6 +180,7 @@ function split() {
       }
     }
   }
+
   count();
   checkMopug(n_Mopug);
   checkBudop(n_Budop);

@@ -13,12 +13,6 @@
   place-items: center;
 }
 
-img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-}
-
 .button-container button {
   height: 2.2rem;
   width: 2.2rem;
@@ -49,4 +43,39 @@ img {
 
 .hide {
   display: none;
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  height: 75vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide {
+  position: absolute;
+  transition: all 0.4s linear;
+}
+
+.nextSlide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.prevSlide {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.activeSlide {
+  transform: translateX(0);
 }

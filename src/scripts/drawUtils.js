@@ -16,11 +16,13 @@ export class Sector {
     this._create();
     Sector.sectors[this.name] = { sector: this };
   }
+
   _create() {
     if (!Sector.sectors) {
       Sector.sectors = {};
     }
   }
+
   _display(pathColor = "#00FA00", pathOpacity = 1.0, pathWeight = 2) {
     this.poly = new google.maps.Polygon({
       map: this.map,
@@ -32,6 +34,7 @@ export class Sector {
       fillOpacity: 0.3,
     });
   }
+
   setMap(map) {
     this.map = map;
     this.poly.setMap(map);
@@ -81,7 +84,8 @@ export class Sector {
 export class Flight {
   /* Generates "flights" or markers which are saved in an array.
   This helps to check how many flights are currently in the area of interested
-  and has references to the this objects that are still in one of*/
+  and has references to the this objects that are still in one of */
+
   constructor(startpoint, hdg, map, step, icon) {
     this.step = step;
     this.map = map;
@@ -93,9 +97,11 @@ export class Flight {
     this._separate();
     this.createMarker(startpoint);
   }
+
   changeSector(name) {
     this.sector = name;
   }
+
   _create() {
     if (!Flight.counterUp) {
       Flight.counterUp = [];
@@ -140,6 +146,7 @@ export class Flight {
       // console.log(Flight.counterDown.length);
     }
   }
+
   updatePos() {
     //console.log("STARTING THE UPDATE");
     /* Updates the position of the marker;

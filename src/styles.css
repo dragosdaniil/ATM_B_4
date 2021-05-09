@@ -68,7 +68,7 @@ td {
 .background-img {
   display: grid;
   grid-template-rows: 10% 90%;
-  background: url("../images/airplane.jpg");
+  background: url("./images/airplane.jpg");
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -126,6 +126,7 @@ h2 {
   height: 2.5rem;
   width: 2.5rem;
   display: none;
+  z-index: 100;
 }
 
 .go-up:hover {
