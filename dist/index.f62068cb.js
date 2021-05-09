@@ -1,0 +1,2 @@
+!function(){const e=document.querySelector(".nav-toggle"),t=document.querySelector(".menu-bar"),o=document.querySelector(".go-up");e.addEventListener("click",(()=>{t.querySelector(".links").classList.toggle("show")})),window.addEventListener("scroll",(()=>{window.scrollY>=150?(t.classList.add("move-bar"),o.style.display="block"):(t.classList.remove("move-bar"),o.style.display="none")})),o.addEventListener("click",(()=>{window.scrollTo(0,0)}));const l=document.querySelector(".date");let n=new Date;l.textContent=n.getFullYear()}();
+//# sourceMappingURL=index.f62068cb.js.map
