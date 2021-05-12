@@ -6,6 +6,10 @@ button.addEventListener("click", () => {
   navbar.querySelector(".links").classList.toggle("show");
 });
 
+/* Functionality for the nav-bar; it becomes fixed
+after a certain scroll length is exceeded 
+I purposedly avoided using position:sticky */
+
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 150) {
     navbar.classList.add("move-bar");

@@ -3,7 +3,8 @@ import { solve } from "./utils.js";
 export class Sector {
   /* This class generates sectors
   Each sector has its own characteristics, like instantaneous capacity
-  and hourly capacity and name */
+  name, currentCapacity, sector color and coordinates.
+  When initialized, the class Sector saves all the instances into a class object */
 
   constructor(coords, map, capacity, name, pathColor) {
     this.coords = coords;
@@ -18,12 +19,15 @@ export class Sector {
   }
 
   _create() {
+    // Initializes the class objects that saves all the class instances IF
+    // it has not been already initialized
     if (!Sector.sectors) {
       Sector.sectors = {};
     }
   }
 
   _display(pathColor = "#00FA00", pathOpacity = 1.0, pathWeight = 2) {
+    // Draws the sector on the map
     this.poly = new google.maps.Polygon({
       map: this.map,
       paths: this.coords,
@@ -36,11 +40,17 @@ export class Sector {
   }
 
   setMap(map) {
+    // Sets the map it is drawn on
+    // Used when the sectors are redrawn after sectorization
     this.map = map;
     this.poly.setMap(map);
   }
 
   checkCapacity() {
+    /* Checks if the capacity has been exceeded by more than 5%,
+    in which case, it emits alerts for the sector.
+    In case that the currentCapacity is less than the instantaneous
+    capacity, the alerts will be deleted */
     if (this.currentCapacity >= 1.05 * this.capacity) {
       if (!document.getElementById("alert" + this.name)) {
         let alerrt = document.createElement("h3");
@@ -69,6 +79,8 @@ export class Sector {
   }
 
   checkPosition(obj) {
+    /* Checks the position of a flight. If a flight is present in this sector, then
+    the flight will save the name of the sector it currently belongs to */
     if (
       google.maps.geometry.poly.containsLocation(
         obj.marker.getPosition(),
@@ -82,9 +94,13 @@ export class Sector {
 }
 
 export class Flight {
-  /* Generates "flights" or markers which are saved in an array.
-  This helps to check how many flights are currently in the area of interested
-  and has references to the this objects that are still in one of */
+  /* Generates "flights" that are flying according to a given heading, the "speed"
+  is defined by a given step. Each flight is initialized from a random point on
+  predefined initialization zones (lines) outside of the sectors.
+  The instances are saved in a class list upon creation in order to keep track of the 
+  flights that are still or have left the area of interest.
+  - id is created in order to facilitate the elimination of flights that left the area of interest
+  - hdg gives the heading of the flight */
 
   constructor(startpoint, hdg, map, step, icon) {
     this.step = step;
@@ -99,22 +115,24 @@ export class Flight {
   }
 
   changeSector(name) {
+    // Used to keep track of the sector the flight currently flies through
     this.sector = name;
   }
 
   _create() {
+    /* Creates a class list for the flights that are going SE - NW
+    and another for flights going NW - SE*/
     if (!Flight.counterUp) {
       Flight.counterUp = [];
     }
     if (!Flight.counterDown) {
       Flight.counterDown = [];
     }
-    // if (!Flight.counter) {
-    //   Flight.counter = [];
-    // }
   }
 
   _separate() {
+    /* At initialization, separates the instances in flightsUp of flightsDown 
+    It reduces the amount of time when deleting a flight */
     if (this.heading > 270 && this.heading < 360) {
       Flight.counterUp.push(this);
     } else {
@@ -150,9 +168,8 @@ export class Flight {
   updatePos() {
     //console.log("STARTING THE UPDATE");
     /* Updates the position of the marker;
-    if the marker exceeded a specified boundary, then it is deleted
-    the update is done each 0.5 seconds. 
-    If the marker is deleted, returns True*/
+    if the marker exceeds a specified boundary, it is deleted.
+    The update is done every second. */
     if (
       this.marker.position.lat() < 44.55 ||
       this.marker.position.lat() > 48.1 ||

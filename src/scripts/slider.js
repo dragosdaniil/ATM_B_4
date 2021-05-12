@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // SLIDE INFINITELY THROUGH IMAGES
+// also doesn't have the fade-in fade-out effect implemented
 // next.addEventListener("click", () => {
 //   if (indexPos < images.length - 1) {
 //     indexPos += 1;
@@ -56,6 +57,10 @@ window.addEventListener("DOMContentLoaded", () => {
 // });
 
 // STOP WHEN YOU REACHED THE FIRST OR LAST IMAGE
+
+/* The code below creates the "slide-show" for the presentation by using
+  predefined CSS classes and attributes. It also has a "fade-in fade-out" 
+  effect when changing slides. */
 
 next.addEventListener("click", (e) => {
   e.currentTarget.previousElementSibling.classList.add("show");

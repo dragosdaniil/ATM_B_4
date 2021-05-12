@@ -3,6 +3,7 @@ function newPoint(a, b) {
 }
 
 function linspace(startValue, stopValue, noElements) {
+  /* MATLAB's linspace is <3 */
   var arr = [];
   var step = (stopValue - startValue) / (noElements - 1);
   for (var i = 0; i < noElements; i++) {
@@ -17,11 +18,11 @@ function calcLine(x, x0, y0, tg) {
 
 function solve(lat1, long1, hdg, step) {
   let alpha;
-  /*If heading is 90 or 270, the tangent will be inf
+  /* If heading is 90 or 270, the tangent will be inf
   If the heading is 0,180,360, the tangent is 0
   We check each case
   for the other cases, we just calculate alpha wrt heading
-  This function returns a LatLng object*/
+  This function returns a LatLng object */
 
   if (hdg === 0 || hdg === 180 || hdg === 360) {
     lat1 = lat1 + Math.sign(Math.cos((hdg * Math.PI) / 180)) * step;

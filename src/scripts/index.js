@@ -69,11 +69,14 @@ let Budop2 = new Sector(
 );
 
 function simulateUp() {
+  // Create n = (1 to noFlights) flights, with a random heading, at a random period of time
+  // The headings used here are predefined and they are in the direction SE => NW
+
   let time = newPoint(4000, 10000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
     let index = Math.floor(newPoint(0, constants.UP[0].length));
-    let dir = Math.floor(newPoint(0, constants.directionsUp.length));
+    let dir = Math.floor(newPoint(0, constants.directionsUp.length)); // direction / heading
     let startpoint = new google.maps.LatLng(
       constants.UP[1][index],
       constants.UP[0][index]
@@ -92,6 +95,9 @@ function simulateUp() {
 }
 
 function simulateDown() {
+  // Create n = (1 to noFlights) flights, with a random heading, at a random period of time
+  // The headings used here are predefined and they are in the direction NW => SE
+
   let time = newPoint(4000, 10000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
@@ -115,6 +121,12 @@ function simulateDown() {
 }
 
 function checkMopug(no) {
+  /* no - the number of flights currently being present in Mopug
+  This function checks if the capacity of the sector has been exceeded
+  When exceeded, the big sector is split in two smaller subsectors
+  If for 5 iterations the capacity is under the sector capacity, then the
+  small subsectors are merged */
+
   if (no > Mopug.capacity) {
     Mopug.setMap(null);
     Mopug1.setMap(map);
@@ -133,6 +145,12 @@ function checkMopug(no) {
 }
 
 function checkBudop(no) {
+  /* no - the number of flights currently being present in Budop
+  This function checks if the capacity of the sector has been exceeded
+  When exceeded, the big sector is split in two smaller subsectors
+  If for 5 iterations the capacity is under the sector capacity, then the
+  small subsectors are merged */
+
   if (no > Budop.capacity) {
     Budop1.setMap(map);
     Budop2.setMap(map);
@@ -151,6 +169,12 @@ function checkBudop(no) {
 }
 
 function split() {
+  // Checks the position of each flight instance existing
+  // and counts the total number of flights present in each sector.
+  // If the capacity is exceeded, the large sector is split.
+  // This function displays the current number of flights in each sector, refreshes
+  // the number of flights present in each sector.
+
   let n_Mopug = 0;
   let n_Budop = 0;
   function count() {
@@ -194,6 +218,8 @@ function split() {
 }
 
 function callback(e) {
+  // This function starts the simulation, which is comprised of
+  // the flight initializations and the capacity check + split, if the capacity is exceeded
   simulateUp();
   simulateDown();
   split();
@@ -205,6 +231,9 @@ function callback(e) {
 }
 
 function stopCallback(e) {
+  // This function stops the simulation and resets the map, deletes the flight instances
+  // and resets all the data displayed about the flights.
+
   clearTimeout(simTimeoutUp);
   clearTimeout(simTimeoutDown);
   clearTimeout(countTimeout);
