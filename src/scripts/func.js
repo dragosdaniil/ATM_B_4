@@ -20,6 +20,13 @@ window.addEventListener("scroll", () => {
   }
 });
 
+window.addEventListener("resize", () => {
+  console.log(window.innerWidth);
+  if (window.innerWidth >= 992) {
+    navbar.querySelector(".links").classList.remove("show");
+  }
+});
+
 goUp.addEventListener("click", () => {
   window.scrollTo(0, 0);
 });

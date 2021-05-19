@@ -1,17 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-  --span-color: rgb(51, 188, 230);
+  --green1: rgb(158, 236, 168);
+  --green2: rgb(82, 228, 101);
   --nav-color: rgb(189, 72, 72);
-  --services: rgba(221, 238, 243, 0.795);
+  --services: rgba(221, 243, 223, 0.795);
+  --black1: rgba(0, 0, 0, 0.7);
+  --black2: rgba(0, 0, 0, 0.5);
+  --black3: rgba(0, 0, 0, 0.2);
+  --grey1: rgb(241, 227, 227);
+  --red1: rgb(119, 32, 32);
+  --blue1: rgb(8, 97, 15);
+  --white1: rgb(241, 250, 241);
+  --white2: white;
+  --transition: all 0.5s linear;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+}
+
 span {
-  color: var(--span-color);
+  color: var(--green2);
   font-weight: 800;
 }
 
@@ -24,16 +41,18 @@ ul {
 a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  color: var(--span-color);
-  font-weight: 900;
+  color: var(--green2);
+  font-weight: 500;
   font-size: 1.25rem;
 }
 li {
   text-align: center;
-  padding: 3px;
+  padding: 5px;
+  transition: var(--transition);
+  border-radius: 0.5rem;
 }
 li:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--black1);
 }
 
 table {
@@ -42,23 +61,26 @@ table {
   width: fit-content;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--span-color);
+  border-color: var(--green2);
 }
 
 th,
 td {
   text-align: center;
-  color: var(--span-color);
+  color: var(--green2);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--span-color);
+  border-color: var(--green2);
 }
 
-* {
-  margin: 0;
-  padding: 0;
+button {
+  transition: var(--transition);
 }
 
+h1 {
+  padding: 5px;
+  margin-top: 1rem;
+}
 .container {
   display: grid;
   grid-template-columns: auto;
@@ -67,7 +89,7 @@ td {
 
 .background-img {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 5rem auto;
   background: url("./images/airplane.jpg");
   height: 100vh;
   width: 100%;
@@ -78,48 +100,69 @@ td {
 }
 
 .start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   background-color: transparent;
-  border-color: var(--span-color);
-  color: var(--span-color);
+  border-style: none;
+  border-radius: 0.5rem;
+  color: var(--green2);
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
   font-size: 2rem;
   outline: none;
 }
+.start:hover {
+  background-color: var(--black2);
+}
+
 nav {
   display: grid;
-  grid-template-columns: 60% auto;
-  min-height: 50px;
-  height: auto;
-  align-items: center;
-  overflow: hidden;
-  color: var(--span-color);
+  grid-template-columns: 1fr 1fr;
+  height: 5rem;
+  color: var(--green2);
+  place-items: center;
   width: 100%;
-  place-content: center;
   z-index: 3;
 }
 
 .web-header {
   display: flex;
+  width: 80%;
+  align-items: flex-start;
 }
 
-h2 {
-  place-self: center;
+.logo {
+  height: 100%;
+  width: 5rem;
 }
+
+.links {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: right;
+  width: 90%;
+  overflow: hidden;
+  background-color: inherit;
+  transition: all 0.6s linear;
+}
+
 .nav-toggle {
   display: none;
 }
 
 .nav-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--black2);
 }
 
 .go-up {
   position: fixed;
-  bottom: 5%;
-  right: 5%;
+  bottom: 5vh;
+  right: 5vw;
   border: none;
-  color: var(--span-color);
+  color: var(--green2);
   outline: 0;
   background-color: transparent;
   font-size: 2rem;
@@ -130,41 +173,48 @@ h2 {
 }
 
 .go-up:hover {
-  background-color: rgba(241, 227, 227, 0.5);
-  color: rgb(119, 32, 32);
+  background-color: var(--black2);
+  color: var(--green1);
 }
 
 .about,
 .services,
 .tours {
-  height: 100vh;
+  min-height: 100vh;
   text-transform: capitalize;
   font-family: "Roboto", sans-serif;
   width: 100%;
   text-align: center;
+}
+.about {
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto auto auto;
+}
+.about h1 {
+  height: 4rem;
 }
 
 .services {
   background-color: var(--services);
   display: grid;
   grid-template-rows: auto auto;
-  width: fit-content;
 }
 
 footer {
-  height: 10vh;
+  height: 5rem;
   display: flex;
-  background-color: darkblue;
+  background-color: var(--blue1);
   width: 100%;
-  color: white;
+  color: var(--white2);
   align-items: center;
   justify-content: center;
 }
 
 .move-bar {
   position: fixed;
-  background-color: rgb(241, 249, 250);
-  box-shadow: 5px -5px 8px rgba(0, 0, 0, 0.4);
+  background-color: var(--white1);
+  box-shadow: 5px -5px 8px var(--black2);
 }
 /* ========
   MAP CONTENT 
@@ -205,15 +255,15 @@ footer {
   height: 2rem;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  color: var(--span-color);
+  color: var(--green2);
   font-weight: 800;
   outline: none;
 }
 
 .sim-start:hover,
 .sim-stop:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  background-color: var(--black3);
+  box-shadow: 2px 2px 7px var(--black2);
 }
 
 #flights {
@@ -238,7 +288,7 @@ footer {
 END OF MAP CONTENT
    ======== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .background-img {
     display: block;
   }
@@ -251,7 +301,7 @@ END OF MAP CONTENT
   .nav-toggle {
     display: block;
     background-color: transparent;
-    color: var(--span-color);
+    color: var(--green2);
     font-size: 2rem;
     height: 2.5rem;
     width: 2.5rem;
@@ -267,24 +317,25 @@ END OF MAP CONTENT
   .web-header {
     display: flex;
     justify-content: space-between;
+    width: 90vw;
   }
   .nav-toggle {
     place-self: center;
   }
 
   .links {
-    display: block;
+    flex-direction: column;
+    align-items: flex-start;
     height: 0;
-    animation: move-up 0.5s linear;
+    width: 100%;
+    z-index: 3;
   }
   li {
     text-align: left;
-    width: fit-content;
+    margin-left: 1rem;
   }
   .show {
-    height: fit-content;
-    text-align: left;
-    animation: move-down 0.5s linear;
+    height: 9rem;
   }
 
   .map-container {
@@ -297,7 +348,7 @@ END OF MAP CONTENT
   #map {
     text-align: center;
     height: 60vh;
-    width: 100%;
+    width: 95%;
     margin: auto;
     justify-content: center;
     grid-area: a;
@@ -316,20 +367,8 @@ END OF MAP CONTENT
 
   .sim-start,
   .sim-stop {
-    background-color: transparent;
-    border: none;
     height: 2rem;
-    font-family: "Roboto", sans-serif;
     font-size: 1rem;
-    color: var(--span-color);
-    font-weight: 800;
-    outline: none;
-  }
-
-  .sim-start:hover,
-  .sim-stop:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
   }
 
   #flights {
@@ -338,27 +377,5 @@ END OF MAP CONTENT
 
   #currentCap {
     grid-area: c;
-  }
-  .go-up {
-    bottom: 10%;
-    right: 10%;
-  }
-}
-
-@keyframes move-down {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 100px;
-  }
-}
-
-@keyframes move-up {
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 0;
   }
 }

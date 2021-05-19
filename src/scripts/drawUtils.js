@@ -40,8 +40,8 @@ export class Sector {
   }
 
   setMap(map) {
-    // Sets the map it is drawn on
-    // Used when the sectors are redrawn after sectorization
+    /* Sets the map it is drawn on
+    Used when the sectors are redrawn after sectorization */
     this.map = map;
     this.poly.setMap(map);
   }
