@@ -201,6 +201,7 @@ nav {
   background-color: var(--green3);
   display: grid;
   grid-template-rows: 4rem auto;
+  padding: 10px;
 }
 .services h1 {
   color: var(--white1);
@@ -352,12 +353,14 @@ END OF MAP CONTENT
     display: grid;
     grid-template-areas: "a a a" "d b c";
     grid-template-columns: 22vw 56vw 22vw;
+    row-gap: 1rem;
     place-items: center;
   }
 
   #map {
     text-align: center;
-    height: 60vh;
+    min-height: 60vh;
+    max-height: 75vh;
     width: 95%;
     margin: auto;
     justify-content: center;
