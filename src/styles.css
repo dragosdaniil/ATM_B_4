@@ -4,11 +4,13 @@
   --green1: rgb(158, 236, 168);
   --green2: rgb(82, 228, 101);
   --green3: rgb(7, 54, 7);
+  --green4: rgb(2, 29, 2);
   --nav-color: rgb(189, 72, 72);
   --services: rgba(221, 243, 223, 0.795);
   --black1: rgba(0, 0, 0, 0.7);
   --black2: rgba(0, 0, 0, 0.5);
   --black3: rgba(0, 0, 0, 0.2);
+  --grey2: rgb(43, 43, 43);
   --grey1: rgb(241, 227, 227);
   --red1: rgb(119, 32, 32);
   --blue1: rgb(8, 97, 15);
@@ -20,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--grey2);
 }
 
 *,
@@ -82,6 +85,7 @@ button {
 h1 {
   padding: 5px;
   margin-top: 1rem;
+  color: var(--white1);
 }
 .container {
   display: grid;
@@ -175,8 +179,7 @@ nav {
 }
 
 .go-up:hover {
-  background-color: var(--black2);
-  color: var(--green1);
+  background-color: var(--black1);
 }
 
 .about,
@@ -204,14 +207,13 @@ nav {
   padding: 10px;
 }
 .services h1 {
-  color: var(--white1);
   height: 4rem;
 }
 
 footer {
   height: 5rem;
   display: flex;
-  background-color: var(--blue1);
+  background-color: var(--green4);
   width: 100%;
   color: var(--white2);
   align-items: center;
@@ -220,7 +222,7 @@ footer {
 
 .move-bar {
   position: fixed;
-  background-color: var(--white1);
+  background-color: var(--green4);
   box-shadow: 5px -5px 8px var(--black2);
 }
 /* ========
@@ -272,8 +274,7 @@ footer {
 
 .sim-start:hover,
 .sim-stop:hover {
-  background-color: var(--white3);
-  color: var(--green3);
+  background-color: var(--black1);
   box-shadow: 2px 2px 7px var(--black1);
 }
 
@@ -341,6 +342,7 @@ END OF MAP CONTENT
     width: 100%;
     z-index: 3;
   }
+
   li {
     text-align: left;
     margin-left: 1rem;
