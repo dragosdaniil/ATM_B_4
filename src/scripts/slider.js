@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
   effect when changing slides. */
 
 next.addEventListener("click", (e) => {
-  e.currentTarget.previousElementSibling.classList.add("show");
+  e.currentTarget.previousElementSibling.classList.add("show-btn");
   const slideCurrent = slideContainer.querySelector(`#img-${indexPos}`);
 
   if (indexPos < images.length - 1) {
@@ -77,12 +77,12 @@ next.addEventListener("click", (e) => {
     console.log(slideNext);
   }
   if (indexPos === images.length - 1) {
-    e.currentTarget.classList.add("hide");
+    e.currentTarget.classList.add("hide-btn");
   }
 });
 
 prev.addEventListener("click", (e) => {
-  e.currentTarget.nextElementSibling.classList.remove("hide");
+  e.currentTarget.nextElementSibling.classList.remove("hide-btn");
   const slideCurrent = slideContainer.querySelector(`#img-${indexPos}`);
   if (indexPos > 0) {
     indexPos -= 1;
@@ -94,6 +94,6 @@ prev.addEventListener("click", (e) => {
     console.log(slidePrev);
   }
   if (indexPos === 0) {
-    e.currentTarget.classList.remove("show");
+    e.currentTarget.classList.remove("show-btn");
   }
 });

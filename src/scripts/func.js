@@ -1,22 +1,14 @@
 const button = document.querySelector(".nav-toggle");
 const navbar = document.querySelector(".menu-bar");
 const goUp = document.querySelector(".go-up");
-let show = false;
+
 button.addEventListener("click", () => {
-  if (!show) {
-    const height = navbar.querySelector(".links").offsetHeight;
-    navbar.querySelector(".links-container").style.height =
-      String(height) + "px";
-    show = true;
-  } else {
-    navbar.querySelector(".links-container").style.height = "0px";
-    show = false;
-  }
+  navbar.querySelector(".links").classList.toggle("show");
 });
 
 /* Functionality for the nav-bar; it becomes fixed
 after a certain scroll length is exceeded 
-I purposedly avoided using position:sticky */
+I intentionally avoided using position:sticky */
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 150) {
@@ -29,12 +21,9 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", () => {
+  console.log(window.innerWidth);
   if (window.innerWidth >= 992) {
-    const height = navbar.querySelector(".links").offsetHeight;
-    navbar.querySelector(".links-container").style.height =
-      String(height) + "px";
-  } else {
-    navbar.querySelector(".links-container").style.height = "0px";
+    navbar.querySelector(".links").classList.remove("show");
   }
 });
 

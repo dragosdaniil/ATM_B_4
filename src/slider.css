@@ -41,11 +41,11 @@
   display: none;
 }
 
-.show {
+.show-btn {
   display: inline-block;
 }
 
-.hide {
+.hide-btn {
   display: none;
 }
 
