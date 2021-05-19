@@ -1,9 +1,17 @@
 const button = document.querySelector(".nav-toggle");
 const navbar = document.querySelector(".menu-bar");
 const goUp = document.querySelector(".go-up");
-
+let show = false;
 button.addEventListener("click", () => {
-  navbar.querySelector(".links").classList.toggle("show");
+  if (!show) {
+    const height = navbar.querySelector(".links").offsetHeight;
+    navbar.querySelector(".links-container").style.height =
+      String(height) + "px";
+    show = true;
+  } else {
+    navbar.querySelector(".links-container").style.height = "0px";
+    show = false;
+  }
 });
 
 /* Functionality for the nav-bar; it becomes fixed
@@ -21,9 +29,12 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", () => {
-  console.log(window.innerWidth);
   if (window.innerWidth >= 992) {
-    navbar.querySelector(".links").classList.remove("show");
+    const height = navbar.querySelector(".links").offsetHeight;
+    navbar.querySelector(".links-container").style.height =
+      String(height) + "px";
+  } else {
+    navbar.querySelector(".links-container").style.height = "0px";
   }
 });
 

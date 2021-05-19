@@ -38,9 +38,7 @@ span {
 }
 
 ul {
-  display: grid;
   list-style-type: none;
-  grid-template-columns: auto auto auto auto;
 }
 
 a {
@@ -52,7 +50,6 @@ a {
 }
 li {
   text-align: center;
-  padding: 5px;
   transition: var(--transition);
   border-radius: 0.5rem;
 }
@@ -83,7 +80,6 @@ button {
 }
 
 h1 {
-  padding: 5px;
   margin-top: 1rem;
   color: var(--white1);
 }
@@ -106,6 +102,7 @@ h1 {
 }
 
 .start {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +138,14 @@ nav {
 
 .logo {
   height: 100%;
-  width: 5rem;
+  width: 80px;
+}
+
+.links-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .links {
@@ -152,7 +156,6 @@ nav {
   width: 90%;
   overflow: hidden;
   background-color: inherit;
-  transition: all 0.6s linear;
 }
 
 .nav-toggle {
@@ -335,20 +338,28 @@ END OF MAP CONTENT
     place-self: center;
   }
 
+  .links-container {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    background-color: inherit;
+    width: 100%;
+    transition: var(--transition);
+  }
+
   .links {
     flex-direction: column;
     align-items: flex-start;
-    height: 0;
+    justify-content: space-evenly;
+    height: 7rem;
     width: 100%;
-    z-index: 3;
   }
 
   li {
-    text-align: left;
     margin-left: 1rem;
   }
   .show {
-    height: 9rem;
+    height: 7rem;
   }
 
   .map-container {
