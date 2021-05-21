@@ -7,7 +7,6 @@
   --green4: rgb(4, 143, 153);
   --green5: rgb(2, 79, 85);
   --green6: rgb(4, 122, 103);
-  --nav-color: rgb(189, 72, 72);
   --services: rgba(221, 243, 223, 0.795);
   --black1: rgba(0, 0, 0, 0.7);
   --black2: rgba(0, 0, 0, 0.5);
@@ -86,6 +85,10 @@ h1 {
   margin-top: 1rem;
   color: var(--green5);
 }
+h3 {
+  color: var(--green4);
+}
+
 .container {
   display: grid;
   grid-template-columns: auto;
@@ -98,7 +101,7 @@ h1 {
   background: url("./images/airplane.jpg");
   height: 100vh;
   width: 100%;
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-position: center;
   place-items: center;
@@ -190,6 +193,7 @@ nav {
   width: 100%;
   text-align: center;
 }
+
 .about {
   display: grid;
   background-color: var(--green4);
@@ -232,7 +236,7 @@ footer {
 .map-container {
   display: grid;
   grid-template-areas: "a b c" "d b c";
-  grid-template-columns: 15vw 70vw 15vw;
+  grid-template-columns: 15% 70% 15%;
   place-items: center;
 }
 .map-container h1 {
@@ -323,7 +327,7 @@ END OF MAP CONTENT
 
   nav {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: auto;
   }
 
   .web-header {
@@ -354,7 +358,7 @@ END OF MAP CONTENT
   .map-container {
     display: grid;
     grid-template-areas: "a a a" "d b c";
-    grid-template-columns: 22vw 56vw 22vw;
+    grid-template-columns: 25vw 50vw 25vw;
     row-gap: 1rem;
     place-items: center;
   }
@@ -392,5 +396,47 @@ END OF MAP CONTENT
 
   #currentCap {
     grid-area: c;
+  }
+}
+
+.tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 6rem;
+  place-items: center;
+}
+
+.member {
+  margin: 1rem;
+}
+
+.member h3 {
+  margin-top: 1rem;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.527);
+}
+.member-img {
+  height: 320px;
+  width: 270px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.527);
+}
+
+@media screen and (max-width: 992px) {
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .team-members {
+    grid-template-columns: auto;
   }
 }
