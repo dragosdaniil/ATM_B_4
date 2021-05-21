@@ -22,7 +22,7 @@
   height: 2.5rem;
   width: 2.5rem;
   font-size: 2rem;
-  color: rgb(82, 228, 101);
+  color: white;
   background-color: transparent;
   border: none;
   outline: none;
@@ -50,25 +50,37 @@
 }
 
 .slide-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   position: relative;
   overflow: hidden;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 
-img {
-  width: 100%;
+.slide-img {
   height: 100%;
-  object-fit: cover;
+  width: 100%;
+  object-fit: fill;
 }
 
 .slide {
   position: absolute;
+  height: 100%;
+  width: 100%;
   transition: all 0.4s linear;
+}
+.slide-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 2;
 }
 
 .nextSlide {

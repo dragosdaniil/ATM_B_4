@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-  --green1: rgb(158, 236, 168);
-  --green2: rgb(82, 228, 101);
-  --green3: rgb(7, 54, 7);
-  --green4: rgb(2, 29, 2);
+  --green1: rgb(175, 255, 255);
+  --green2: rgb(92, 245, 245);
+  --green3: rgb(7, 176, 182);
+  --green4: rgb(4, 143, 153);
+  --green5: rgb(2, 79, 85);
+  --green6: rgb(4, 122, 103);
   --nav-color: rgb(189, 72, 72);
   --services: rgba(221, 243, 223, 0.795);
   --black1: rgba(0, 0, 0, 0.7);
   --black2: rgba(0, 0, 0, 0.5);
   --black3: rgba(0, 0, 0, 0.2);
-  --grey2: rgb(43, 43, 43);
+  --grey2: rgb(255, 255, 255);
   --grey1: rgb(241, 227, 227);
   --red1: rgb(119, 32, 32);
   --blue1: rgb(8, 97, 15);
@@ -45,7 +47,7 @@ ul {
 a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  color: var(--green2);
+  color: var(--white1);
   font-weight: 500;
   font-size: 1.25rem;
 }
@@ -64,16 +66,16 @@ table {
   width: fit-content;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--green2);
+  border-color: var(--green4);
 }
 
 th,
 td {
   text-align: center;
-  color: var(--green2);
+  color: var(--green4);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--green2);
+  border-color: var(--green4);
 }
 
 button {
@@ -82,7 +84,7 @@ button {
 
 h1 {
   margin-top: 1rem;
-  color: var(--white1);
+  color: var(--green5);
 }
 .container {
   display: grid;
@@ -110,21 +112,21 @@ h1 {
   background-color: transparent;
   border-style: none;
   border-radius: 0.5rem;
-  color: var(--green2);
+  color: var(--green4);
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
   font-size: 2rem;
   outline: none;
 }
 .start:hover {
-  background-color: var(--black2);
+  background-color: var(--black3);
 }
 
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 5rem;
-  color: var(--green2);
+  color: var(--white1);
   place-items: center;
   width: 100%;
   z-index: 3;
@@ -165,7 +167,7 @@ nav {
   bottom: 5vh;
   right: 5vw;
   border: none;
-  color: var(--green2);
+  color: var(--green6);
   outline: 0;
   background-color: transparent;
   font-size: 2rem;
@@ -176,7 +178,7 @@ nav {
 }
 
 .go-up:hover {
-  background-color: var(--black1);
+  background-color: var(--green2);
 }
 
 .about,
@@ -190,6 +192,7 @@ nav {
 }
 .about {
   display: grid;
+  background-color: var(--green4);
   place-items: center;
   grid-template-rows: auto auto auto;
 }
@@ -198,7 +201,7 @@ nav {
 }
 
 .services {
-  background-color: var(--green3);
+  background-color: var(--white1);
   display: grid;
   grid-template-rows: 4rem auto;
   padding: 10px;
@@ -264,7 +267,7 @@ footer {
   height: 2rem;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  color: var(--green2);
+  color: var(--green4);
   font-weight: 800;
   outline: none;
 }
@@ -310,7 +313,7 @@ END OF MAP CONTENT
   .nav-toggle {
     display: block;
     background-color: transparent;
-    color: var(--green2);
+    color: var(--white1);
     font-size: 2rem;
     height: 2.5rem;
     width: 2.5rem;

@@ -2,7 +2,7 @@ import { Sector, Flight } from "./drawUtils.js";
 import * as constants from "./constants.js";
 import { newPoint } from "./utils.js";
 
-const noFlights = 5;
+const noFlights = 8;
 let simTimeoutUp;
 let simTimeoutDown;
 let countTimeout;
@@ -249,11 +249,11 @@ function checkBudop(no) {
 }
 
 function split() {
-  // Checks the position of each flight instance existing
-  // and counts the total number of flights present in each sector.
-  // If the capacity is exceeded, the large sector is split.
-  // This function displays the current number of flights in each sector, refreshes
-  // the number of flights present in each sector.
+  /* Checks the position of each flight instance existing
+  and counts the total number of flights present in each sector.
+  If the capacity is exceeded, the large sector is split.
+  This function displays the current number of flights in each sector, refreshes
+  the number of flights present in each sector. */
 
   let n_Mopug = 0;
   let n_Budop = 0;

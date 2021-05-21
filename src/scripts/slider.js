@@ -1,9 +1,9 @@
 const images = [
-  "./images/img1.jpg",
-  "./images/img2.jpg",
-  "./images/img3.jpg",
-  "./images/img4.jpg",
+  "./images/first-page-template.png",
+  "./images/pages-template.png",
 ];
+
+const data = ["Team B", "Bla Bla Bla"];
 
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
@@ -14,23 +14,30 @@ const nextSlide = "nextSlide";
 const activeSlide = "activeSlide";
 const prevSlide = "prevSlide";
 
-const slides = images.map((image, index) => {
-  const slide = document.createElement("img");
-  slide.setAttribute("src", image);
-  slide.setAttribute("id", "img-" + index.toString());
+const createSlide = (image, index) => {
+  const slide = document.createElement("div");
+  const imgSlide = document.createElement("img");
+
+  slide.setAttribute("id", "slide-" + index.toString());
   slide.classList.add("slide");
   slide.classList.add(nextSlide);
-  slideContainer.appendChild(slide);
-  return slide;
-});
 
-console.log(slides);
+  imgSlide.setAttribute("src", image);
+  imgSlide.classList.add("slide-img");
+
+  slide.appendChild(imgSlide);
+  slideContainer.appendChild(slide);
+
+  return slide;
+};
+
+images.map((image, index) => createSlide(image, index));
 
 // END OF CODE
 let indexPos = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
-  const slide = slideContainer.querySelector(`#img-${indexPos}`);
+  const slide = slideContainer.querySelector(`#slide-${indexPos}`);
   slide.classList.add(activeSlide);
   slide.classList.remove(nextSlide);
 });
@@ -64,12 +71,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 next.addEventListener("click", (e) => {
   e.currentTarget.previousElementSibling.classList.add("show-btn");
-  const slideCurrent = slideContainer.querySelector(`#img-${indexPos}`);
+  const slideCurrent = slideContainer.querySelector(`#slide-${indexPos}`);
 
   if (indexPos < images.length - 1) {
     indexPos += 1;
 
-    const slideNext = slideContainer.querySelector(`#img-${indexPos}`);
+    const slideNext = slideContainer.querySelector(`#slide-${indexPos}`);
     slideCurrent.classList.remove(activeSlide);
     slideCurrent.classList.add(prevSlide);
     slideNext.classList.remove(nextSlide);
@@ -83,10 +90,10 @@ next.addEventListener("click", (e) => {
 
 prev.addEventListener("click", (e) => {
   e.currentTarget.nextElementSibling.classList.remove("hide-btn");
-  const slideCurrent = slideContainer.querySelector(`#img-${indexPos}`);
+  const slideCurrent = slideContainer.querySelector(`#slide-${indexPos}`);
   if (indexPos > 0) {
     indexPos -= 1;
-    const slidePrev = slideContainer.querySelector(`#img-${indexPos}`);
+    const slidePrev = slideContainer.querySelector(`#slide-${indexPos}`);
     slideCurrent.classList.remove(activeSlide);
     slideCurrent.classList.add(nextSlide);
     slidePrev.classList.remove(prevSlide);
