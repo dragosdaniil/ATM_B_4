@@ -1,6 +1,16 @@
 const images = [
-  "./images/first-page-template.png",
-  "./images/pages-template.png",
+  "./images/presentation/slide1.png",
+  "./images/presentation/slide2.png",
+  "./images/presentation/slide3.png",
+  "./images/presentation/slide4.png",
+  "./images/presentation/slide5.png",
+  "./images/presentation/slide6.png",
+  "./images/presentation/slide7.png",
+  "./images/presentation/slide8.png",
+  "./images/presentation/slide9.png",
+  "./images/presentation/slide10.png",
+  "./images/presentation/slide11.png",
+  "./images/presentation/slide12.png",
 ];
 
 const data = ["Team B", "Bla Bla Bla"];
