@@ -13,8 +13,6 @@ const images = [
   "./images/presentation/slide12.png",
 ];
 
-const data = ["Team B", "Bla Bla Bla"];
-
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
 
