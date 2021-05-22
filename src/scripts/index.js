@@ -73,7 +73,7 @@ function simulateUp() {
   // Create n = (1 to noFlights) flights, with a random heading, at a random period of time
   // The headings used here are predefined and they are in the direction SE => NW
 
-  let time = newPoint(4000, 10000);
+  let time = newPoint(3000, 8000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
     let index = Math.floor(newPoint(0, constants.UP[0].length));
@@ -99,7 +99,7 @@ function simulateDown() {
   // Create n = (1 to noFlights) flights, with a random heading, at a random period of time
   // The headings used here are predefined and they are in the direction NW => SE
 
-  let time = newPoint(4000, 10000);
+  let time = newPoint(3000, 8000);
   let no_flights = newPoint(1, noFlights);
   for (let i = 0; i < no_flights; i++) {
     let index = Math.floor(newPoint(0, constants.DOWN[0].length));

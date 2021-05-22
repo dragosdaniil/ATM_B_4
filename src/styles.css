@@ -217,7 +217,7 @@ nav {
 footer {
   height: 5rem;
   display: flex;
-  background-color: var(--green4);
+  background-color: var(--green5);
   width: 100%;
   color: var(--white2);
   align-items: center;
@@ -226,7 +226,7 @@ footer {
 
 .move-bar {
   position: fixed;
-  background-color: var(--green4);
+  background-color: var(--green5);
   box-shadow: 5px -5px 8px var(--black2);
 }
 /* ========
